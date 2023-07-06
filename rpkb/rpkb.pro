@@ -16,6 +16,7 @@ SOURCES += \
 
 HEADERS += \
     complexudp.h \
+    datastruct.h \
     goesudp.h \
     mainwindow.h
 
