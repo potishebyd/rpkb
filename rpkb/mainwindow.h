@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "datastruct.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +16,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    QByteArray getFormData() const;
+
 private:
     Ui::MainWindow *ui;
+    data_t collectFormData() const;
 };
 #endif // MAINWINDOW_H

@@ -12,7 +12,7 @@ public:
     Q_OBJECT
 public:
     explicit ComplexUDP(QObject *parent = 0);
-    void sendingData();
+    void sendingData(QByteArray &data);
 signals:
 
 public slots:

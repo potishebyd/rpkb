@@ -7,12 +7,14 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    MainWindow w;
+//    w.show();
 
     GoesUDP server;
     ComplexUDP client;
 
-    client.sendingData();
-    //MainWindow w;
-    //w.show();
+    QByteArray data = w.getFormData();
+    client.sendingData(data);
+
     return a.exec();
 }
