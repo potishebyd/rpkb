@@ -1,5 +1,8 @@
 #include "goesudp.h"
-#include "datastruct.h"
+
+
+#include "sendpackages.h"
+#include "recievepackages.h"
 
 GoesUDP::GoesUDP(QObject *parent)
     : QObject(parent)
@@ -25,4 +28,15 @@ void GoesUDP::readingData()
     qDebug() << "Message from: " << sender.toString();
     qDebug() << "Message port: " << senderPort;
     qDebug() << "Message: model -" << a->model << ", id -" << a->id;
+
+//    packageMode mode;
+//    int temp = PACKAGE_MODE_CODE;
+//    qDebug() << mode.packageCode;
+//    qDebug() << temp;
+//    qDebug() << mode.packageCount;
+//    mode.packageCount = 10;
+//    qDebug() << mode.packageCount;
+//    qDebug() << sizeof(packageMode);
+    decodedPackageMode p;
+    qDebug() << p.mode;
 }

@@ -16,9 +16,10 @@ SOURCES += \
 
 HEADERS += \
     complexudp.h \
-    datastruct.h \
     goesudp.h \
-    mainwindow.h
+    mainwindow.h \
+    recievepackages.h \
+    sendpackages.h
 
 FORMS += \
     mainwindow.ui
