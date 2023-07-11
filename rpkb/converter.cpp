@@ -40,11 +40,35 @@ QByteArray Converter::convertPackageTpvToQByteArray(packageTpv& st)
     return data;
 }
 
+complexPackageType Converter::type(QByteArray& byteArray)
+{
+    // надо проверить возвращает ли size такой же размер, как и размер структуры
+    switch (byteArray.size()) {
+    case sizeof(packageLd):
+        return LD;
+    case sizeof(packageTv):
+    {
+        packageTv* tmp = reinterpret_cast<packageTv*>(byteArray.data()); // заменить на приватные методы
+        if (tmp->packageCode == PACKAGE_TPV_CODE)
+            return TPV;
+        return TV;
+    }
+    case sizeof(packageAs):
+    {
+        packageMode* tmp = reinterpret_cast<packageMode*>(byteArray.data()); // заменить на приватные методы
+        if (tmp->packageCode == PACKAGE_MODE_CODE)
+            return MODE;
+    }
+    default:
+        return AS;
+    }
+}
+
 decodedPackageMode Converter::convertByteArrayToDecodedPackageMode(QByteArray& byteArray)
 {
     decodedPackageMode result;
 
-    packageMode* tmp = reinterpret_cast<packageMode*>(byteArray.data());
+    packageMode* tmp = reinterpret_cast<packageMode*>(byteArray.data()); // заменить на приватные методы
 
     switch (tmp->mode)
     {

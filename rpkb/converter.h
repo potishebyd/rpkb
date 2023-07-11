@@ -13,25 +13,31 @@ class Converter
 public:
     Converter();
 
+//    to QByteArray
     QByteArray convertPackageModeToQByteArray(packageMode& st);
-
     QByteArray convertPackageLdToQByteArray(packageLd& st);
-
     QByteArray convertPackageAsToQByteArray(packageAs& st);
-
     QByteArray convertPackageTvToQByteArray(packageTv& st);
-
     QByteArray convertPackageTpvToQByteArray(packageTpv& st);
 
+//    checkType
+    complexPackageType type(QByteArray& byteArray);
+
+//    to ComplexPackages
     decodedPackageMode convertByteArrayToDecodedPackageMode(QByteArray& byteArray);
-
     decodedLd convertByteArrayToDecodedLd(QByteArray& byteArray);
-
     decodedAs convertByteArrayToDecodedAs(QByteArray& byteArray);
-
     decodedTv convertByteArrayToDecodedTv(QByteArray& byteArray);
-
     decodedTpv convertByteArrayToDecodedTpv(QByteArray& byteArray);
+
+private:
+    //    from QByteArray to sendpackages for each package
+
+
+
+
+
+
 };
 
 #endif // CONVERTER_H
