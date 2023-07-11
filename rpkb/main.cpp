@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "goesudp.h"
 #include "complexudp.h"
+#include "converter.h"
 
 #include <QApplication>
 

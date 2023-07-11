@@ -10,12 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     complexudp.cpp \
+    converter.cpp \
     goesudp.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     complexudp.h \
+    converter.h \
     goesudp.h \
     mainwindow.h \
     recievepackages.h \
