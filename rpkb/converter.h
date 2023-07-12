@@ -30,13 +30,15 @@ public:
     decodedTv convertByteArrayToDecodedTv(QByteArray& byteArray);
     decodedTpv convertByteArrayToDecodedTpv(QByteArray& byteArray);
 
+
 private:
     //    from QByteArray to sendpackages for each package
 
-
-
-
-
+    packageMode* convertQByteArrayToPackageMode(QByteArray& byteArray);
+    packageLd* converQByteArrayToPackageLd(QByteArray& byteArray);
+    packageAs* convertQByteArrayToPackageAs(QByteArray& byteArray);
+    packageTv* convertQByteArrayToPackageTv(QByteArray& byteArray);
+    packageTpv* convertQByteArrayToPackageTpv(QByteArray& byteArray);
 
 };
 
