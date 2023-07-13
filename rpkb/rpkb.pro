@@ -10,15 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     complexudp.cpp \
+    converter.cpp \
     goesudp.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     complexudp.h \
-    datastruct.h \
+    converter.h \
     goesudp.h \
-    mainwindow.h
+    mainwindow.h \
+    recievepackages.h \
+    sendpackages.h
 
 FORMS += \
     mainwindow.ui

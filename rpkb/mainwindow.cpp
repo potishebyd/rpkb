@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -8,18 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 }
 
-data_t MainWindow::collectFormData() const
-{
-    data_t a;
-    a.id = 20;
-    qstrncpy(a.model, "str", 10);
-    return a;
-}
+
 
 QByteArray MainWindow::getFormData() const
 {
-    data_t a = collectFormData();
-    QByteArray data(reinterpret_cast<const char*>(&a), sizeof(data_t));
+    packageTpv a;
+    qDebug() << sizeof(a);
+    QByteArray data(reinterpret_cast<const char*>(&a), sizeof(packageTpv));
+    qDebug() << data.size();
     return data;
 }
 
