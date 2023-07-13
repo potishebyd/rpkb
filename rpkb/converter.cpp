@@ -48,14 +48,14 @@ complexPackageType Converter::type(QByteArray& byteArray)
         return LD;
     case sizeof(packageTv):
     {
-        packageTv* tmp = this->convertQByteArrayToPackageTv(byteArray); // заменить на приватные методы
+        packageTv* tmp = this->convertQByteArrayToPackageTv(byteArray);
         if (tmp->packageCode == PACKAGE_TPV_CODE)
             return TPV;
         return TV;
     }
     case sizeof(packageAs):
     {
-        packageMode* tmp = this->convertQByteArrayToPackageMode(byteArray); // заменить на приватные методы
+        packageMode* tmp = this->convertQByteArrayToPackageMode(byteArray);
         if (tmp->packageCode == PACKAGE_MODE_CODE)
             return MODE;
     }

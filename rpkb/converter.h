@@ -33,7 +33,6 @@ public:
 
 private:
     //    from QByteArray to sendpackages for each package
-
     packageMode* convertQByteArrayToPackageMode(QByteArray& byteArray);
     packageLd* converQByteArrayToPackageLd(QByteArray& byteArray);
     packageAs* convertQByteArrayToPackageAs(QByteArray& byteArray);
