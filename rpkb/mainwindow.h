@@ -20,6 +20,5 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    data_t collectFormData() const;
 };
 #endif // MAINWINDOW_H

@@ -14,11 +14,6 @@
 #define DEFAULT_TPV_PARAMS 0x001A0000
 //0000 0000 0001 1011 0000 0000 0000 0000
 
-struct data_t {
-    int id;
-    char model[20];
-};
-
 typedef struct {
     const unsigned int packageCode = PACKAGE_MODE_CODE;
     const int reserve1[3] = {0, 0, 0};

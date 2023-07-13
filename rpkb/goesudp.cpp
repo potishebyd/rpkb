@@ -3,6 +3,7 @@
 
 #include "sendpackages.h"
 #include "recievepackages.h"
+#include "converter.h"
 
 GoesUDP::GoesUDP(QObject *parent)
     : QObject(parent)
@@ -23,20 +24,11 @@ void GoesUDP::readingData()
     socket->readDatagram(buffer.data(), buffer.size(),
                          &sender, &senderPort);
 
-    data_t* a = reinterpret_cast<data_t*>(buffer.data());
+    Converter* converter = new Converter();
+    complexPackageType t = converter->type(buffer);
 
     qDebug() << "Message from: " << sender.toString();
     qDebug() << "Message port: " << senderPort;
-    qDebug() << "Message: model -" << a->model << ", id -" << a->id;
-
-//    packageMode mode;
-//    int temp = PACKAGE_MODE_CODE;
-//    qDebug() << mode.packageCode;
-//    qDebug() << temp;
-//    qDebug() << mode.packageCount;
-//    mode.packageCount = 10;
-//    qDebug() << mode.packageCount;
-//    qDebug() << sizeof(packageMode);
-    decodedPackageMode p;
-    qDebug() << p.mode;
+    qDebug() << t;
+    qDebug() << buffer.size();
 }

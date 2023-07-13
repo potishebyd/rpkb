@@ -42,7 +42,6 @@ QByteArray Converter::convertPackageTpvToQByteArray(packageTpv& st)
 
 complexPackageType Converter::type(QByteArray& byteArray)
 {
-    // надо проверить возвращает ли size такой же размер, как и размер структуры
     switch (byteArray.size()) {
     case sizeof(packageLd):
         return LD;
@@ -58,6 +57,7 @@ complexPackageType Converter::type(QByteArray& byteArray)
         packageMode* tmp = this->convertQByteArrayToPackageMode(byteArray);
         if (tmp->packageCode == PACKAGE_MODE_CODE)
             return MODE;
+        return AS;
     }
     default:
         return AS;
