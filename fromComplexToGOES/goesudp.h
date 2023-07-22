@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QUdpSocket>
+#include "converter.h"
 
 
 class GoesUDP : public QObject
@@ -17,6 +18,7 @@ public slots:
 
 private:
     QUdpSocket *socket;
+    Converter *converter = new Converter();
 
 };
 

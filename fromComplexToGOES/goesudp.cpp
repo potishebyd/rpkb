@@ -24,7 +24,6 @@ void GoesUDP::readingData()
     socket->readDatagram(buffer.data(), buffer.size(),
                          &sender, &senderPort);
 
-    Converter* converter = new Converter();
     complexPackageType t = converter->type(buffer);
 
     qDebug() << "Message from: " << sender.toString();
